@@ -8,4 +8,11 @@
 
     console.log('1, filled with 4 bites (unsigned 8-bit integers) with given values')
     console.log(arr[1]);
+
+    let arr16 = new Uint16Array([1, 1000]);
+    let arr8 = new Uint8Array([arr16]);
+    console.log("");
+    console.log('if another TypeArray is supplied');
+    console.log(arr8[0]);
+    console.log(arr[8]); //232, tried to copy 1000, but can't fit 1000 into 8 bits (explanations below)
 </script>
