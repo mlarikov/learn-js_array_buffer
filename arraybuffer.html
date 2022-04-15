@@ -2,9 +2,9 @@
 <script>
     "use strict";
 
-    let buffer = ArrayBuffer(16); //create a buffer of length 16
+    let buffer = new ArrayBuffer(16); //create a buffer of length 16
 
-    let view = Unit16Array(buffer); // treat buffer as a sequence of 32-bit integers
+    let view = new Uint32Array(buffer); // treat buffer as a sequence of 32-bit integers
 
     alert(Uint32Array.BYTES_PER_ELEMENT); // 4 byte per integer
 
