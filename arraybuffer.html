@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<script>
+    "use strict";
+
+    let buffer = ArrayBuffer(16); //create a buffer of length 16
+
+    let view = Unit16Array(buffer); // treat buffer as a sequence of 32-bit integers
+
+    alert(Uint32Array.BYTES_PER_ELEMENT); // 4 byte per integer
+
+    alert(view.length); // 4, it stores that many integers
+    alert(view.byteLength); // 16, the size in bytes
+
+    // let's write a value
+    view[0] = 123456;
+
+    // iterate other values
+    for (let num of view) {
+        alert(num); // 123456, then 0, 0, 0 (4 values total)
+    }
+
+</script>
