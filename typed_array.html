@@ -15,4 +15,11 @@
     console.log('if another TypeArray is supplied');
     console.log(arr8[0]);
     console.log(arr8[1]); //232, tried to copy 1000, but can't fit 1000 into 8 bits (explanations below)
+
+    // For a numeric argument length
+    concole.log('For a nemeric argument length');
+    arr = new Uint16Array(4); //create typed array forr 4 integer
+    alert(Uint16Array.BYTES_PER_ELEMENT); //2 byte per integer
+    alert(arr.byteLength); // 8 (size in bytes)
+
 </script>
