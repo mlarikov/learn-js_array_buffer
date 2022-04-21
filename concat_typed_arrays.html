@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<script src="https://en.js.cx/test/libs.js"></script>
+<script src="./test_concat.js"></script>
+<script>
+    function concat(arrays) {
+        if (!arrays.length) return null;
+
+        // sum of idividual array length
+        let totalLength = arrays.reduce((acc, value) => acc + value.length, 0);
+
+        let result = new Uint8Array(totalLength);
+
+        // for each array - copy it over result
+        // next array copied right after previous one
+        let length = 0;
+        for (let array of arrays) {
+            result.set(array, length);
+            length += array.length;
+        };
+
+        return result;
+    };
+
+    let chunks = [
+        new Uint8Array([1, 2, 3]),
+        new Uint8Array([4, 5, 6]),
+        new Uint8Array([7, 8, 9])
+    ];
+
+    console.log(Array.from(concat(chunks))); // 1, 2, 3, 4, 5, 6, 7, 8, 9
+    console.log(concat(chunks).constructor.name); // Uint8Array
+</script>
+
+</html>
