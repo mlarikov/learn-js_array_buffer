@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<script>
+    "use strict"
+
+    // binary array of 4 bytes, all have a maximal value 255
+    let buffer = Uint8Array([255, 255, 255, 255]).buffer;
+
+    let dataView = new DataView(buffer);
+
+    console.log('get 8-bit number at offset 0');
+    console.log(dataView.getUint8(0));
+
+    console.log('now get 16-bit number at offset 0, it consist of 2 bytes, togather intrpreted as 65535');
+    console.log('65535 (biggest 16-bit unsigned int)');
+    console.log(dataView.getUint16(0));
+
+    console.log('get 32-bit number at offset 0');
+    console.log('4294967295 (biggest 32-bit unsigned int)');
+    console.log(dataView.getUint32(0));
+
+    console.log('set 4-bytes number to zero, thus settting all bytes to 0');
+    console.log(dataView.setUint32(0));
+
+</script>
+
+</html>
