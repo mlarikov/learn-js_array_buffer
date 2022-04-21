@@ -4,13 +4,21 @@
 <script src="./test_concat.js"></script>
 <script>
     function concat(arrays) {
+<<<<<<< HEAD
+=======
+        if (!arrays.length) return null;
+
+>>>>>>> 9a2c70f007ad467ca095ca21efee4e685bc60e21
         // sum of idividual array length
         let totalLength = arrays.reduce((acc, value) => acc + value.length, 0);
 
         let result = new Uint8Array(totalLength);
 
+<<<<<<< HEAD
         if (!arrays.length) return result;
 
+=======
+>>>>>>> 9a2c70f007ad467ca095ca21efee4e685bc60e21
         // for each array - copy it over result
         // next array copied right after previous one
         let length = 0;
